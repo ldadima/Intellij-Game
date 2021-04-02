@@ -1,0 +1,36 @@
+version: "3"
+
+volumes:
+  www-data:
+
+services:
+  db:
+    container_name: www-db
+    image: postgres
+    environment:
+      POSTGRES_USER: fit
+      POSTGRES_PASSWORD: 20www_cigfit18
+    volumes:
+      - "www-data:/var/lib/postgresql/data"
+
+#  back:
+#    container_name: cm-back
+#    build:
+#      context: .
+#      dockerfile: docker/Dockerfile
+#    restart: always
+#    environment:
+#      PROFILE_APP: server
+#    ports:
+#      - 8080:8080
+#
+#  front:
+#    tty: true
+#    container_name: cm-front
+#    build:
+#      context: .
+#      dockerfile: docker/front/Dockerfile
+#    restart: always
+#    ports:
+#      - 3000:3000
+
